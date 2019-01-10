@@ -52,5 +52,10 @@ namespace Exercício1
         {
             RibbonPresenter.criarFieldForm();
         }
+
+        private void qualificacaoPJ_Click(object sender, RibbonControlEventArgs e)
+        {
+            RibbonPresenter.criarQualificacaoForm();
+        }
     }
 }

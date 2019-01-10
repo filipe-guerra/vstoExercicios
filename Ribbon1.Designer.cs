@@ -36,12 +36,12 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
+            this.group2 = this.Factory.CreateRibbonGroup();
             this.btnSave_as_PDF = this.Factory.CreateRibbonButton();
             this.AddImage = this.Factory.CreateRibbonButton();
             this.insTabela = this.Factory.CreateRibbonButton();
             this.invertCase = this.Factory.CreateRibbonButton();
             this.findReplace = this.Factory.CreateRibbonButton();
-            this.group2 = this.Factory.CreateRibbonGroup();
             this.addField = this.Factory.CreateRibbonButton();
             this.addSpan = this.Factory.CreateRibbonButton();
             this.qualificacaoPJ = this.Factory.CreateRibbonButton();
@@ -67,6 +67,14 @@
             this.group1.Items.Add(this.findReplace);
             this.group1.Label = "group1";
             this.group1.Name = "group1";
+            // 
+            // group2
+            // 
+            this.group2.Items.Add(this.addField);
+            this.group2.Items.Add(this.addSpan);
+            this.group2.Items.Add(this.qualificacaoPJ);
+            this.group2.Label = "group2";
+            this.group2.Name = "group2";
             // 
             // btnSave_as_PDF
             // 
@@ -112,14 +120,6 @@
             this.findReplace.ShowImage = true;
             this.findReplace.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.findReplace_Click);
             // 
-            // group2
-            // 
-            this.group2.Items.Add(this.addField);
-            this.group2.Items.Add(this.addSpan);
-            this.group2.Items.Add(this.qualificacaoPJ);
-            this.group2.Label = "group2";
-            this.group2.Name = "group2";
-            // 
             // addField
             // 
             this.addField.Label = "Add Field";
@@ -136,6 +136,7 @@
             // 
             this.qualificacaoPJ.Label = "Qualificação PJ";
             this.qualificacaoPJ.Name = "qualificacaoPJ";
+            this.qualificacaoPJ.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.qualificacaoPJ_Click);
             // 
             // Ribbon1
             // 

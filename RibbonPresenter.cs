@@ -12,6 +12,7 @@ namespace Exercício1
         static private Word.Selection selecao = Globals.ThisAddIn.Application.Selection;
         static private AddSpan span;
         static private AddField addField;
+        static private QualificacaoForm qualForm;
 
         private static string fullPath()
         {
@@ -142,8 +143,65 @@ namespace Exercício1
         public static void adicionarExpressao(string exp)
         {
             selecao.Font.Subscript = 0;
-            selecao.InsertBefore("{" + exp + "}");
+            selecao.TypeText("{" + exp + "}");
             fecharAddField();
+        }
+
+        public static void criarQualificacaoForm()
+        {
+            qualForm = new QualificacaoForm();
+            qualForm.Show();
+        }
+        private static void fecharQualForm() { qualForm.Close(); }
+
+        public static void adicionarQualificacao(string cPJ, string cPF)
+        {
+            fecharQualForm();
+
+            //Qualificacao PJ
+            selecao.Font.Subscript = 0;
+            selecao.Font.Bold = 1;
+            selecao.TypeText(String.Format("{{{0}.RazaoSocial Formatar \"caixaalta\"}},", cPJ));
+            selecao.Font.Bold = 0;
+            selecao.TypeText(String.Format(" {{{0}.Tipo}}, inscrit[", cPJ));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("{0}.Genero = \"masculino\"", cPJ));
+            selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format("o][", cPJ));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("{0}.Genero = \"feminino\"", cPJ));
+            selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format("a] no CNPJ sob o n. {{{0}.CNPJ}}, sediad[", cPJ));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("{0}.Genero = \"masculino\"", cPJ));
+            selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format("o][", cPJ));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("{0}.Genero = \"feminino\"", cPJ));
+            selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format("a] na {{{0}.Logradouro}}, {{{0}.LogradouroNumeroComp}}[", cPJ));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("{0}.LogradouroNumeroComp = \"n.\"", cPJ));
+            selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format(" ]{{{0}.LogradouroNumero}}, [", cPJ));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("{0}.LogradouroComplemento != \"\"", cPJ));
+            selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format("{{{0}.LogradouroComplemento}}, ]bairro {{{0}.Bairro}}, {{{0}.Municipio}}/{{{0}.Estado}}, {{{0}.Pais}}, [", cPJ));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("{0}.Pais = \"Brasil\"", cPJ));
+            selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format("CEP][", cPJ));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("{0}.Pais != \"Brasil\"", cPJ));
+            selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format("Código Postal]: {{{0}.CEP}}", cPJ));
+
+            //Qualificacao PF com repetir
+            /*selecao.Font.Subscript = 0;
+            selecao.TypeText(String.Format("", cPF));
+            selecao.Font.Subscript = -1;
+            selecao.TypeText(String.Format("", cPF));*/
         }
     }
 }
