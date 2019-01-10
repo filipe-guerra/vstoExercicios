@@ -10,6 +10,8 @@ namespace Exercício1
     {
         static private Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
         static private Word.Selection selecao = Globals.ThisAddIn.Application.Selection;
+        static private AddSpan span;
+        static private AddField addField;
 
         private static string fullPath()
         {
@@ -110,6 +112,13 @@ namespace Exercício1
             
 
         }*/
+        public static void criarSpanForm()
+        {
+            span = new AddSpan();
+            span.Show();
+        }
+
+        private static void fecharSpan() { span.Close(); }
 
         public static void adicionarSpan(string span)
         {
@@ -120,6 +129,21 @@ namespace Exercício1
             selecao.InsertBefore(span);
             selecao.Font.Subscript = -1;
             doc.Range(selecao.Start - 1, selecao.Start - 1).Select();
+            fecharSpan();
+        }
+
+        public static void criarFieldForm()
+        {
+            addField = new AddField();
+            addField.Show();
+        }
+        private static void fecharAddField() { addField.Close(); }
+
+        public static void adicionarExpressao(string exp)
+        {
+            selecao.Font.Subscript = 0;
+            selecao.InsertBefore("{" + exp + "}");
+            fecharAddField();
         }
     }
 }

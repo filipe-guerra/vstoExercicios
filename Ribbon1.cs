@@ -45,7 +45,12 @@ namespace Exercício1
 
         private void addSpan_Click(object sender, RibbonControlEventArgs e)
         {
-            RibbonPresenter.adicionarSpan("aaa");
+            RibbonPresenter.criarSpanForm();
+        }
+
+        private void addField_Click(object sender, RibbonControlEventArgs e)
+        {
+            RibbonPresenter.criarFieldForm();
         }
     }
 }

@@ -156,6 +156,18 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="AddField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddField.Designer.cs">
+      <DependentUpon>AddField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSpan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSpan.Designer.cs">
+      <DependentUpon>AddSpan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindPanel.cs" />
     <Compile Include="FindPanelPresenter.cs">
       <SubType>UserControl</SubType>
@@ -166,6 +178,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="AddField.resx">
+      <DependentUpon>AddField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSpan.resx">
+      <DependentUpon>AddSpan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FindPanelPresenter.resx">
       <DependentUpon>FindPanelPresenter.cs</DependentUpon>
     </EmbeddedResource>
