@@ -3,6 +3,8 @@ using Word = Microsoft.Office.Interop.Word;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.Office.Interop.Word;
+using Microsoft.Office.Tools.Word;
+using System;
 
 namespace Exercício1
 {
@@ -16,6 +18,23 @@ namespace Exercício1
             myUserControl = new FindPanelPresenter();
             myCustomTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(myUserControl, "Find and Replace");
             myCustomTaskPane.Visible = false;
+            Globals.ThisAddIn.Application.DocumentChange += Application_DocumentChange;
+        }
+
+        private void Application_DocumentChange()
+        {
+            if (Globals.ThisAddIn.Application.Documents.Count != 0)
+            {
+                var vstoDoc = Globals.Factory.GetVstoObject(Globals.ThisAddIn.Application.ActiveDocument);
+                vstoDoc.SelectionChange += VstoDoc_SelectionChange;
+            }
+        }
+
+        private void VstoDoc_SelectionChange(object sender, SelectionEventArgs e)
+        {
+            var selecao = Globals.ThisAddIn.Application.Selection;
+            if(selecao.Range.Text!=null && selecao.Range.Text!="") invertCase.Enabled = true;
+            else invertCase.Enabled = false;
         }
 
         private void btnSave_as_PDF_Click(object sender, RibbonControlEventArgs e)
