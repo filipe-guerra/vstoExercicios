@@ -33,8 +33,16 @@ namespace Exercício1
         private void VstoDoc_SelectionChange(object sender, SelectionEventArgs e)
         {
             var selecao = Globals.ThisAddIn.Application.Selection;
-            if(selecao.Range.Text!=null && selecao.Range.Text!="") invertCase.Enabled = true;
-            else invertCase.Enabled = false;
+            if (selecao.Range.Text != null && selecao.Range.Text != "")
+            {
+                invertCase.Enabled = true;
+                addSpan.Enabled = true;
+            }
+            else
+            {
+                invertCase.Enabled = false;
+                addSpan.Enabled = false;
+            }
         }
 
         private void btnSave_as_PDF_Click(object sender, RibbonControlEventArgs e)

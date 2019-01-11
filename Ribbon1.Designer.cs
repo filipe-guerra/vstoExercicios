@@ -128,6 +128,7 @@
             // 
             // addSpan
             // 
+            this.addSpan.Enabled = false;
             this.addSpan.Label = "Add Span";
             this.addSpan.Name = "addSpan";
             this.addSpan.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.addSpan_Click);
