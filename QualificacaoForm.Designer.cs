@@ -38,43 +38,48 @@
             // 
             // textBoxPJ
             // 
-            this.textBoxPJ.Location = new System.Drawing.Point(151, 40);
+            this.textBoxPJ.Location = new System.Drawing.Point(201, 49);
+            this.textBoxPJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPJ.Name = "textBoxPJ";
-            this.textBoxPJ.Size = new System.Drawing.Size(155, 20);
+            this.textBoxPJ.Size = new System.Drawing.Size(205, 22);
             this.textBoxPJ.TabIndex = 0;
             this.textBoxPJ.Text = "contatoPJ";
             // 
             // textBoxPF
             // 
-            this.textBoxPF.Location = new System.Drawing.Point(151, 77);
+            this.textBoxPF.Location = new System.Drawing.Point(201, 95);
+            this.textBoxPF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPF.Name = "textBoxPF";
-            this.textBoxPF.Size = new System.Drawing.Size(155, 20);
+            this.textBoxPF.Size = new System.Drawing.Size(205, 22);
             this.textBoxPF.TabIndex = 1;
             this.textBoxPF.Text = "contatoPF";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 43);
+            this.label1.Location = new System.Drawing.Point(47, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.Size = new System.Drawing.Size(138, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nome do Contato PJ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 80);
+            this.label2.Location = new System.Drawing.Point(47, 98);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
+            this.label2.Size = new System.Drawing.Size(139, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nome do Contato PF";
             // 
             // buttonQualOK
             // 
-            this.buttonQualOK.Location = new System.Drawing.Point(231, 117);
+            this.buttonQualOK.Location = new System.Drawing.Point(308, 144);
+            this.buttonQualOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonQualOK.Name = "buttonQualOK";
-            this.buttonQualOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonQualOK.Size = new System.Drawing.Size(100, 28);
             this.buttonQualOK.TabIndex = 4;
             this.buttonQualOK.Text = "OK";
             this.buttonQualOK.UseVisualStyleBackColor = true;
@@ -82,9 +87,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(150, 117);
+            this.button2.Location = new System.Drawing.Point(200, 144);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
@@ -92,16 +98,18 @@
             // 
             // QualificacaoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 176);
+            this.ClientSize = new System.Drawing.Size(472, 217);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonQualOK);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPF);
             this.Controls.Add(this.textBoxPJ);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QualificacaoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Qualificação com Representante";
             this.ResumeLayout(false);
             this.PerformLayout();

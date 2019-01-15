@@ -61,9 +61,10 @@
             "8",
             "9",
             "10"});
-            this.comboBoxLinhas.Location = new System.Drawing.Point(105, 37);
+            this.comboBoxLinhas.Location = new System.Drawing.Point(140, 46);
+            this.comboBoxLinhas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxLinhas.Name = "comboBoxLinhas";
-            this.comboBoxLinhas.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLinhas.Size = new System.Drawing.Size(160, 24);
             this.comboBoxLinhas.TabIndex = 0;
             // 
             // comboBoxColunas
@@ -81,34 +82,38 @@
             "8",
             "9",
             "10"});
-            this.comboBoxColunas.Location = new System.Drawing.Point(105, 85);
+            this.comboBoxColunas.Location = new System.Drawing.Point(140, 105);
+            this.comboBoxColunas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxColunas.Name = "comboBoxColunas";
-            this.comboBoxColunas.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxColunas.Size = new System.Drawing.Size(160, 24);
             this.comboBoxColunas.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 40);
+            this.label1.Location = new System.Drawing.Point(56, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Linhas";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 88);
+            this.label2.Location = new System.Drawing.Point(56, 108);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Colunas";
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(151, 138);
+            this.buttonOK.Location = new System.Drawing.Point(201, 170);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonOK.Size = new System.Drawing.Size(100, 28);
             this.buttonOK.TabIndex = 4;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -116,15 +121,17 @@
             // 
             // TableConfigWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 194);
+            this.ClientSize = new System.Drawing.Size(355, 239);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxColunas);
             this.Controls.Add(this.comboBoxLinhas);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TableConfigWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserir Tabela";
             this.Load += new System.EventHandler(this.TableConfigWindow_Load);
             this.ResumeLayout(false);

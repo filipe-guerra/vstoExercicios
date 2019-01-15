@@ -36,9 +36,10 @@
             // 
             // buttonSpanOK
             // 
-            this.buttonSpanOK.Location = new System.Drawing.Point(123, 87);
+            this.buttonSpanOK.Location = new System.Drawing.Point(164, 107);
+            this.buttonSpanOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSpanOK.Name = "buttonSpanOK";
-            this.buttonSpanOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpanOK.Size = new System.Drawing.Size(100, 28);
             this.buttonSpanOK.TabIndex = 0;
             this.buttonSpanOK.Text = "OK";
             this.buttonSpanOK.UseVisualStyleBackColor = true;
@@ -46,25 +47,28 @@
             // 
             // textBoxSpan
             // 
-            this.textBoxSpan.Location = new System.Drawing.Point(35, 54);
+            this.textBoxSpan.Location = new System.Drawing.Point(47, 66);
+            this.textBoxSpan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxSpan.Name = "textBoxSpan";
-            this.textBoxSpan.Size = new System.Drawing.Size(163, 20);
+            this.textBoxSpan.Size = new System.Drawing.Size(216, 22);
             this.textBoxSpan.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 29);
+            this.label1.Location = new System.Drawing.Point(43, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Span:";
             // 
             // buttonCancelSpan
             // 
-            this.buttonCancelSpan.Location = new System.Drawing.Point(35, 87);
+            this.buttonCancelSpan.Location = new System.Drawing.Point(47, 107);
+            this.buttonCancelSpan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancelSpan.Name = "buttonCancelSpan";
-            this.buttonCancelSpan.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelSpan.Size = new System.Drawing.Size(100, 28);
             this.buttonCancelSpan.TabIndex = 4;
             this.buttonCancelSpan.Text = "Cancelar";
             this.buttonCancelSpan.UseVisualStyleBackColor = true;
@@ -72,14 +76,16 @@
             // 
             // AddSpan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 146);
+            this.ClientSize = new System.Drawing.Size(303, 180);
             this.Controls.Add(this.buttonCancelSpan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxSpan);
             this.Controls.Add(this.buttonSpanOK);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddSpan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Span";
             this.ResumeLayout(false);
             this.PerformLayout();
