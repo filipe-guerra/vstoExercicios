@@ -83,7 +83,5 @@ namespace Exercício1
             { selection.TypeText(rpl); }
             selection.Find.Execute(ref findText);
         }
-
-
     }
 }

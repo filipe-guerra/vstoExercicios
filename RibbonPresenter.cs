@@ -105,14 +105,6 @@ namespace Exercício1
             doc.Range(start, end).Select();
         }
 
-        /*public static void enable_disable_button()
-        {
-            
-            var docObj = Globals.Factory.GetVstoObject(doc);
-            docObj.SelectionChange += docObj_SelectionChange;
-            
-
-        }*/
         public static void criarSpanForm()
         {
             span = new AddSpan();
@@ -201,7 +193,7 @@ namespace Exercício1
             selecao.Font.Subscript = 0;
             selecao.TypeText("[");
             selecao.Font.Subscript = -1;
-            selecao.TypeText(String.Format("repetir numRep pontuacao \"; |; e |.\" ", cPF));
+            selecao.TypeText(String.Format("repetir numRep pontuacao \"; |; e |.\"", cPF));
             selecao.Font.Subscript = 0;
             selecao.Font.Bold = 1;
             selecao.TypeText(String.Format("{{{0}.Nome Formatar \"caixaalta\"}},", cPF));
@@ -257,6 +249,20 @@ namespace Exercício1
             selecao.TypeText(String.Format("", cPF));
             selecao.Font.Subscript = -1;
             selecao.TypeText(String.Format("", cPF));*/
+        }
+
+        public static void inserirXML()
+        {
+            string xmlString = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>" +
+        "<employees xmlns=\"http://schemas.microsoft.com/vsto/samples\">" +
+            "<employee>" +
+                "<name>Karina Leal</name>" +
+                "<hireDate>1999-04-01</hireDate>" +
+                "<title>Manager</title>" +
+            "</employee>" +
+        "</employees>";
+
+            doc.Range().InsertXML(xmlString);
         }
     }
 }

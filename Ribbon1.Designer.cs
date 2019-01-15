@@ -36,12 +36,13 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.group2 = this.Factory.CreateRibbonGroup();
             this.btnSave_as_PDF = this.Factory.CreateRibbonButton();
             this.AddImage = this.Factory.CreateRibbonButton();
             this.insTabela = this.Factory.CreateRibbonButton();
             this.invertCase = this.Factory.CreateRibbonButton();
             this.findReplace = this.Factory.CreateRibbonButton();
+            this.InsertXML = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
             this.addField = this.Factory.CreateRibbonButton();
             this.addSpan = this.Factory.CreateRibbonButton();
             this.qualificacaoPJ = this.Factory.CreateRibbonButton();
@@ -65,16 +66,9 @@
             this.group1.Items.Add(this.insTabela);
             this.group1.Items.Add(this.invertCase);
             this.group1.Items.Add(this.findReplace);
+            this.group1.Items.Add(this.InsertXML);
             this.group1.Label = "group1";
             this.group1.Name = "group1";
-            // 
-            // group2
-            // 
-            this.group2.Items.Add(this.addField);
-            this.group2.Items.Add(this.addSpan);
-            this.group2.Items.Add(this.qualificacaoPJ);
-            this.group2.Label = "group2";
-            this.group2.Name = "group2";
             // 
             // btnSave_as_PDF
             // 
@@ -108,7 +102,7 @@
             this.invertCase.Enabled = false;
             this.invertCase.Label = "Inverter Case";
             this.invertCase.Name = "invertCase";
-            this.invertCase.OfficeImageId = "PictureEditWord";
+            this.invertCase.OfficeImageId = "ChangeCase";
             this.invertCase.ShowImage = true;
             this.invertCase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.invertCase_Click);
             // 
@@ -116,14 +110,30 @@
             // 
             this.findReplace.Label = "Find and Replace";
             this.findReplace.Name = "findReplace";
-            this.findReplace.OfficeImageId = "PictureEditWord";
+            this.findReplace.OfficeImageId = "FindDialog";
             this.findReplace.ShowImage = true;
             this.findReplace.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.findReplace_Click);
+            // 
+            // InsertXML
+            // 
+            this.InsertXML.Label = "Insert XML";
+            this.InsertXML.Name = "InsertXML";
+            this.InsertXML.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.InsertXML_Click);
+            // 
+            // group2
+            // 
+            this.group2.Items.Add(this.addField);
+            this.group2.Items.Add(this.addSpan);
+            this.group2.Items.Add(this.qualificacaoPJ);
+            this.group2.Label = "group2";
+            this.group2.Name = "group2";
             // 
             // addField
             // 
             this.addField.Label = "Add Field";
             this.addField.Name = "addField";
+            this.addField.OfficeImageId = "KeepBackgroundRemoval";
+            this.addField.ShowImage = true;
             this.addField.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.addField_Click);
             // 
             // addSpan
@@ -131,12 +141,16 @@
             this.addSpan.Enabled = false;
             this.addSpan.Label = "Add Span";
             this.addSpan.Name = "addSpan";
+            this.addSpan.OfficeImageId = "KeepBackgroundRemoval";
+            this.addSpan.ShowImage = true;
             this.addSpan.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.addSpan_Click);
             // 
             // qualificacaoPJ
             // 
             this.qualificacaoPJ.Label = "Qualificação PJ";
             this.qualificacaoPJ.Name = "qualificacaoPJ";
+            this.qualificacaoPJ.OfficeImageId = "KeepBackgroundRemoval";
+            this.qualificacaoPJ.ShowImage = true;
             this.qualificacaoPJ.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.qualificacaoPJ_Click);
             // 
             // Ribbon1
@@ -168,6 +182,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton addField;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton addSpan;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton qualificacaoPJ;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton InsertXML;
     }
 
     partial class ThisRibbonCollection

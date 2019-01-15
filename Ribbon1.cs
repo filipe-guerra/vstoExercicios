@@ -84,5 +84,10 @@ namespace Exercício1
         {
             RibbonPresenter.criarQualificacaoForm();
         }
+
+        private void InsertXML_Click(object sender, RibbonControlEventArgs e)
+        {
+            RibbonPresenter.inserirXML(); 
+        }
     }
 }
