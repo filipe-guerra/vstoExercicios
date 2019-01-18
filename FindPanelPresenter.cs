@@ -37,5 +37,35 @@ namespace Exercício1
         {
             FindPanel.replace(findBox.Text, replaceBox.Text, checkBoxCase.Checked);
         }
+
+        private void findBox_TextChanged(object sender, EventArgs e)
+        {
+            if (findBox.Text.Length < 1)
+            {
+                findNext.Enabled = false;
+                replace.Enabled = false;
+                replaceAll.Enabled = false;
+            }
+            else
+            {
+                findNext.Enabled = true;
+                replace.Enabled = true;
+                replaceAll.Enabled = true;
+            }
+        }
+
+        private void replaceBox_TextChanged(object sender, EventArgs e)
+        {
+            if (replaceBox.Text.Length < 1)
+            {
+                replace.Enabled = false;
+                replaceAll.Enabled = false;
+            }
+            else
+            {
+                replace.Enabled = true;
+                replaceAll.Enabled = true;
+            }
+        }
     }
 }

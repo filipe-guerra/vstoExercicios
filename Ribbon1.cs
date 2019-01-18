@@ -10,14 +10,14 @@ namespace Exercício1
 {
     public partial class Ribbon1
     {
-        private FindPanelPresenter myUserControl;
-        private Microsoft.Office.Tools.CustomTaskPane myCustomTaskPane;
+        static private FindPanelPresenter myUserControl;
+        static private Microsoft.Office.Tools.CustomTaskPane myCustomTaskPane;
 
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
             myUserControl = new FindPanelPresenter();
             myCustomTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(myUserControl, "Find and Replace");
-            myCustomTaskPane.Visible = false;
+            myCustomTaskPane.Width = 320;
             Globals.ThisAddIn.Application.DocumentChange += Application_DocumentChange;
         }
 

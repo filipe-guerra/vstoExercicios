@@ -8,14 +8,15 @@ namespace Exercício1
 {
     class RibbonPresenter
     {
-        static private Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
-        static private Word.Selection selecao = Globals.ThisAddIn.Application.Selection;
+        //static private Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+        //static private Word.Selection selecao = Globals.ThisAddIn.Application.Selection;
         static private AddSpan span;
         static private AddField addField;
         static private QualificacaoForm qualForm;
 
         private static string fullPath()
         {
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
             string sfileName_Document = doc.Name;
             string sPath = doc.Path;
             string sFullpath_pdf = sPath + "\\" + sfileName_Document + ".pdf";
@@ -24,9 +25,11 @@ namespace Exercício1
 
         public static void savePDF()
         {
-            try {
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+            try
+            {
                 doc.ExportAsFixedFormat(fullPath(), Word.WdExportFormat.wdExportFormatPDF, OpenAfterExport: true);
-                }
+            }
             catch (System.Runtime.InteropServices.COMException e)
             {
                 MessageBox.Show("Verifique se seu arquivo está salvo em algum local válido!\n\n" + e.Message);
@@ -35,7 +38,7 @@ namespace Exercício1
 
         public static void addImage()
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -44,11 +47,12 @@ namespace Exercício1
                 openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 1;
                 openFileDialog.RestoreDirectory = true;
-                selecao.Select();
+                //selecao.Select();
+                doc.Select();
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    selecao.InlineShapes.AddPicture(openFileDialog.FileName);
+                    doc.InlineShapes.AddPicture(openFileDialog.FileName);
                 }
             }
         }
@@ -61,10 +65,12 @@ namespace Exercício1
 
         public static void criarTabela(string ln, string cl, TableConfigWindow tableconf)
         {
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+
             int linha, coluna;
             Int32.TryParse(ln, out linha);
             Int32.TryParse(cl, out coluna);
-            
+
             Word.Range rg = Globals.ThisAddIn.Application.Selection.Range;
             var tab = doc.Tables.Add(rg, linha, coluna);
 
@@ -83,25 +89,26 @@ namespace Exercício1
 
         public static void invertCase()
         {
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+
             int start = doc.Application.Selection.Start;
             int end = doc.Application.Selection.End;
-            //Word.Range rg = doc.Range(start, end);
-            selecao.Select();
-            string aux ="";
-            foreach (char c in selecao.Text)
+            Word.Range rg = doc.Range(start, end);
+            rg.Select();
+
+            string aux = "";
+            foreach (char c in rg.Application.Selection.Text)
             {
-                if (Char.IsLetter(c))
+                if (c != '\r')
                 {
                     if (Char.IsLower(c))
                     {
-                        aux = aux + Char.ToUpper(c);
+                        aux += Char.ToUpper(c);
                     }
-                    else aux = aux + Char.ToLower(c);
-                    
+                    else aux += Char.ToLower(c);
                 }
-                else aux = aux + c;
             }
-            selecao.TypeText(aux);
+            doc.Application.Selection.TypeText(aux);
             doc.Range(start, end).Select();
         }
 
@@ -115,6 +122,9 @@ namespace Exercício1
 
         public static void adicionarSpan(string span)
         {
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+            var selecao = doc.Application.Selection;
+
             selecao.Font.Subscript = 0;
             selecao.InsertBefore("[");
             selecao.InsertAfter("]");
@@ -134,6 +144,9 @@ namespace Exercício1
 
         public static void adicionarExpressao(string exp)
         {
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+            var selecao = doc.Application.Selection;
+            
             selecao.Font.Subscript = 0;
             selecao.TypeText("{" + exp + "}");
             fecharAddField();
@@ -148,6 +161,8 @@ namespace Exercício1
 
         public static void adicionarQualificacao(string cPJ, string cPF)
         {
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+            var selecao = doc.Application.Selection;
             fecharQualForm();
 
             //Qualificacao PJ
@@ -253,6 +268,8 @@ namespace Exercício1
 
         public static void inserirXML()
         {
+            Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+
             string xmlString = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>" +
                                 "<employees xmlns=\"http://schemas.microsoft.com/vsto/samples\">" +
                                     "<employee>" +
